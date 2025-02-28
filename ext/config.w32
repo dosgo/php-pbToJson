@@ -1,0 +1,7 @@
+ARG_ENABLE('pbtojson', 'pbtojson support', 'no');
+
+if (PHP_PBTOJSON != 'no') {
+	AC_DEFINE('HAVE_PBTOJSON', 1, 'pbtojson support enabled');
+
+	EXTENSION('pbtojson', 'pbtojson.c', null, '/DZEND_ENABLE_STATIC_TSRMLS_CACHE=1');
+}
